@@ -2,6 +2,17 @@ console.log("Wab serverni boshlash");
 const express = require("express"); // expressni chaqirib olyapmiz
 const app = express(); // app o'zgaruvchisiga expressni chaqirib oldik (aylantirib oldik express kk bolgan joyda appni ishlatsak boladi)
 const http = require("http"); // http ni chaqirish
+const fs = require("fs");
+
+let user;
+fs.readFile("database/user.json", "utf8", (err, data) => {
+  if(err) {
+    console.log("ERROR:", err);
+  }else {
+    user = JSON.parse(data)
+  }
+});
+
 
 // 1: Kirish code
 app.use(express.static("public")); // bu folderni ichida css va image/ boladi
@@ -20,6 +31,10 @@ app.post("/create-item", (req, res) => {
     res.json({ test: "success" });
 });
 
+app.get("/author", (req, res) => {
+  res.render("author", {user: user});
+});
+
 app.get("/", (req, res) => {
     res.render("harid");
 });
@@ -31,7 +46,7 @@ app.get("/", (req, res) => {
 //     console.log(`the server is running successFull on post: ${PORT}`);
 // });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 2000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
