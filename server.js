@@ -1,5 +1,6 @@
 console.log("Wab serverni boshlash");
 const express = require("express"); // expressni chaqirib olyapmiz
+// const res = require("express/lib/response")
 const app = express(); // app o'zgaruvchisiga expressni chaqirib oldik (aylantirib oldik express kk bolgan joyda appni ishlatsak boladi)
 const http = require("http"); // http ni chaqirish
 const fs = require("fs");
@@ -11,7 +12,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
   }else {
     user = JSON.parse(data)
   }
-});
+}); 
 
 
 // 1: Kirish code
@@ -46,7 +47,7 @@ app.get("/", (req, res) => {
 //     console.log(`the server is running successFull on post: ${PORT}`);
 // });
 
-const PORT = process.env.PORT || 2000;
+const PORT = process.env.PORT || 2001;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
