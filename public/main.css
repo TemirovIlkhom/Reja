@@ -127,6 +127,7 @@
 .lf_image img {
     border-radius: 75px;
     max-width: 100%;
+    object-fit: contain;
 }
 
 .lf_user_name {
@@ -191,6 +192,7 @@
     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, .25));
     /* Yellow */
     background: #FFB400;
+    cursor: pointer;
 }
 
 .icon1 {
@@ -569,6 +571,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .novicon {
@@ -796,27 +799,22 @@
     margin-top: 215px;
 }
 
-.ringht3 {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    background: #FFB400;
-    border-radius: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
 .ringht2 {
     position: relative;
     width: 40px;
     height: 40px;
-    background: #F0F0F6;
+    background-color: #F0F0F6;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 50px;
     margin-top: 43px;
+    cursor: pointer;
+
+}
+
+.ringht2:hover {
+    background:  #FFB400;
 }
