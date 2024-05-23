@@ -1,12 +1,5 @@
-/*
-Masalani izohi
-A-TASK: 
 
-Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
-MASALAN countLetter("e", "engineer") 3ni return qiladi.
-
-
-*/
+// A - TASK: 
 
 //masalani yechimi:
 
@@ -21,7 +14,23 @@ function InWord(letter, word) {
   }
   
   console.log(InWord('a', 'banana')); // natija => 3
+  
+//=================================
 
+// B - TASK
+
+function numberSearch(s) {
+    let count = 0;                               // Raqamlar sonini sanash uchun o'zgaruvchi
+    for (let i = 0; i < s.length; i++) {          // Har bir belgini ko'rib chiqamiz
+        if (s[i] >= '0' && s[i] <= '9') {          // Agar belgi raqam bo'lsa
+            count++;                              // Sanog'ini birga oshiramiz
+        }
+    }
+    return count;                               // Raqamlar sonini qaytaramiz
+}
+
+// Funksiyani chaqirish va natijani ko'rsatish
+console.log(numberSearch("ad2a54y79we4t0sf4gb9"));  // Chiqariladigan natija: 7
 
 
 
