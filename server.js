@@ -2,7 +2,7 @@ const http = require("http"); // http ni chaqirish
 const mongodb = require("mongodb");
 
 let db;
-const connectionString = "mongodb+srv://ilhomtemirov9601:QCh3lFIvpqwLO1g3@cluster0.g5mvq6d.mongodb.net/"
+const connectionString = "mongodb+srv://ilhomtemirov9601:QCh3lFIvpqwLO1g3@cluster0.g5mvq6d.mongodb.net/Reja"
 
 mongodb.connect(connectionString, {
     useNewUrlParser: true,
