@@ -42,46 +42,46 @@ function InWord(letter, word) {
 
 //⭐️Callback functions
 
-// const list = [
-// "yahshi talaba boling", // 0-20
-// "togri boshliq tanlang va koproq hato qiling", // 20-30
-// "uzingizga ishlashingizni boshlang", // 30-40
-// "siz kuchli bolgan narsalarni qiling", // 40-50
-// "yoshlarga investitsiya qiling", // 50-60
-// "endi dam oling, foydasi yog endi", // 60
-// ];  
+const list = [
+"yahshi talaba boling", // 0-20
+"togri boshliq tanlang va koproq hato qiling", // 20-30
+"uzingizga ishlashingizni boshlang", // 30-40
+"siz kuchli bolgan narsalarni qiling", // 40-50
+"yoshlarga investitsiya qiling", // 50-60
+"endi dam oling, foydasi yog endi", // 60
+];  
 
-// function maslahatBering(a, callback) {
-//     if(typeof a !== "number") callback("insert a number", null);
-//     else if(a <= 2) callback(null, list[0]);
-//     else if(a > 2 && a <= 3) callback(null, list[1]);
-//     else if(a > 3 && a <= 4) callback(null, list[2]);
-//     else if(a > 4 && a <= 5) callback(null, list[3]);
-//     else if(a > 5 && a <= 6) callback(null, list[4]);
-//     else {
-//         // callback(null, list[5]);
-//         setTimeout( () => {
-//             callback(null, list[5]); 
-//         },5000);
-//     }
-// }
+function maslahatBering(a, callback) {
+    if(typeof a !== "number") callback("insert a number", null);
+    else if(a <= 2) callback(null, list[0]);
+    else if(a > 2 && a <= 3) callback(null, list[1]);
+    else if(a > 3 && a <= 4) callback(null, list[2]);
+    else if(a > 4 && a <= 5) callback(null, list[3]);
+    else if(a > 5 && a <= 6) callback(null, list[4]);
+    else {
+        // callback(null, list[5]);
+        setTimeout( () => {
+            callback(null, list[5]); 
+        },5000);
+    }
+}
 
 
-// console.log("passed here 0")
-// maslahatBering(7, (err, data) => {
-//     if(err) console.log("ERROR:", err);
-//     else{
-//         console.log("javob:", data);
-//     }
-// });
-// console.log("passed here 1")
+console.log("passed here 0")
+maslahatBering(7, (err, data) => {
+    if(err) console.log("ERROR:", err);
+    else{
+        console.log("javob:", data);
+    }
+});
+console.log("passed here 1")
 
-// maslahatBering("salom", (err, data) => {
-//     if(err) console.log("ERROR:", err);
-//     else{
-//         console.log("javob:", data);
-//     }
-// });
+maslahatBering("salom", (err, data) => {
+    if(err) console.log("ERROR:", err);
+    else{
+        console.log("javob:", data);
+    }
+});
 
 // //=======================
 
@@ -164,7 +164,7 @@ function InWord(letter, word) {
 
 
 
-//asyn await
+//async await
 // async function run() {
 // let javob = await maslahatBering(25);
 // console.log(javob);

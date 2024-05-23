@@ -37,7 +37,7 @@ app.get("/author", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-    res.render("harid");
+    res.render("reja");
 });
 
 
@@ -49,6 +49,6 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 2001;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}, http://localhost:${PORT}`);
 });
  
