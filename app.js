@@ -1,6 +1,6 @@
 console.log("Wab serverni boshlash");
 const express = require("express"); // expressni chaqirib olyapmiz
-// const res = require("express/lib/response")
+const res = require("express/lib/response") 
 const app = express(); // app o'zgaruvchisiga expressni chaqirib oldik (aylantirib oldik express kk bolgan joyda appni ishlatsak boladi)
 const fs = require("fs");
 
@@ -8,7 +8,7 @@ let user;
 fs.readFile("database/user.json", "utf8", (err, data) => {
   if(err) {
     console.log("ERROR:", err);
-  }else {
+  }else {       
     user = JSON.parse(data)
   }
 }); 
@@ -33,14 +33,10 @@ app.set("view engine", "ejs"); // views engine ejs ekanligini korsatib beryapmiz
 app.post("/create-item", (req, res) => {
   console.log("user entered /create-item");
     console.log( req.body );
-    const ner_reja = req.body.reja;
-    db.collection("plans").insertOne({reja: ner_reja}, (err, data) => {
-      if (err) {
-        console.log(err);
-        res.end("something went wrong");
-      } else {
-        res.end("successfully added");
-      }
+    const new_reja = req.body.reja;
+    db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
+      console.log(data.ops);
+     res.json(data.ops[0]);
     });
 });
 
@@ -58,8 +54,8 @@ app.get("/", (req, res) => {
       res.end("something went wrong");
     } else {
       res.render("reja", {items: data});
-    }
-  })
+    }      
+  })       
 });
 
 
