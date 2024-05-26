@@ -1,6 +1,8 @@
+// const { response } = require("express");
+
 console.log("FrontEnd JS ishga tushdi");
 
-function itemTamplate (item) {
+function itemTemplate (item) {
     return`<li
     class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
     <span class="item-text">${item.reja}</span>
@@ -21,7 +23,8 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
     axios
     .post("/create-item", {reja: createField.value})
     .then((response) => {
-        document.getElementById("item-list").insertAdjacentHTML("afterbegin", itemTamplate(response.data));
+        document.getElementById("item-list")
+        .insertAdjacentHTML("afterbegin", itemTemplate(response.data));
         createField.value="";
         createField.focus();
     })
@@ -29,3 +32,26 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
         console.log("Iltimos qaytadan harakat qiling!")
     } );
 });
+
+
+document.addEventListener("click", function (e) {
+    //delete oper
+    if (e.target.classList.contains("delete-me")) {
+        if(confirm("Aniq o'chirmoqchimisiz?")) {
+            axios
+            .post("/delete-item", {id: e.target.getAttribute("data-id")})
+            .then((response) => {
+                console.log(response.data);
+                e.target.parentElement.parentElement.remove();
+            })
+            .catch((err) =>  {
+        console.log("Iltimos qaytadan harakat qiling!")
+            })
+        };
+     }  
+
+    //edit oper
+    if (e.target.classList.contains("edit-me")) {
+        alert("siz edit tugmasini bosdingiz");
+    }   
+}); 
