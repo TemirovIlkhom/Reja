@@ -1,46 +1,66 @@
+// D - TASK: Anagramma
+function anagram(qiymat1, qiymat2) {
+  if (qiymat1.length !== qiymat2.length) {
+      return false;
+  }
+  const charCount = {};
+  for (let char of qiymat1) {
+      charCount[char] = (charCount[char] || 0) + 1;
+  }
+  for (let char of qiymat2) {
+      if (!charCount[char]) 
+        return false;
+  }
+  return true;
+}
+
+console.log(anagram('listen', 'silent')); // true
+console.log(anagram('hello', 'world')); // false
+
+
 // // C - TASK:
 // //masalani yechimi:
 
-class Shop {
-    constructor(olma, anor, banan) {
-      this.olma = olma;
-      this.anor = anor;
-      this.banan = banan;
-      console.log('Shop yaratildi:', new Date().toLocaleString());
-    }
+// class Shop {
+//     constructor(olma, anor, banan) {
+//       this.olma = olma;
+//       this.anor = anor;
+//       this.banan = banan;
+//       console.log('Shop yaratildi:', new Date().toLocaleString());
+//     }
   
-    qoldiq() {
-      console.log('Qoldiqni tekshirish:', new Date().toLocaleString());
-      console.log(`olma: ${this.olma}, anor: ${this.anor}, banan: ${this.banan}`);
-    }
+//     qoldiq() {
+//       console.log('Qoldiqni tekshirish:', new Date().toLocaleString());
+//       console.log(`olma: ${this.olma}, anor: ${this.anor}, banan: ${this.banan}`);
+//     }
   
-    sotish(productKey, quantity) {
-      console.log(`${productKey} dan ${quantity} ta sotish boshlandi:`, new Date().toLocaleString());
-      if (this[productKey] !== undefined && this[productKey] >= quantity) {
-        this[productKey] -= quantity;
-        console.log(`${productKey} dan ${quantity} ta sotildi. Qoldiq: ${this[productKey]}`);
-      } else {
-        console.log(`Kechirasiz, ${productKey} dan yetarli miqdor mavjud emas.`);
-      }
-    }
+//     sotish(productKey, quantity) {
+//       console.log(`${productKey} dan ${quantity} ta sotish boshlandi:`, new Date().toLocaleString());
+//       if (this[productKey] !== undefined && this[productKey] >= quantity) {
+//         this[productKey] -= quantity;
+//         console.log(`${productKey} dan ${quantity} ta sotildi. Qoldiq: ${this[productKey]}`);
+//       } else {
+//         console.log(`Kechirasiz, ${productKey} dan yetarli miqdor mavjud emas.`);
+//       }
+//     }
   
-    qabul(productKey, quantity) {
-      console.log(`${productKey} ga ${quantity} ta qabul ishga tushdi:`, new Date().toLocaleString());
-      if (this[productKey] !== undefined) {
-        this[productKey] += quantity;
-      } else {
-        this[productKey] = quantity;
-      }
-      console.log(`${productKey} ga ${quantity} ta qo'shildi. Yangi qoldiq: ${this[productKey]}`);
-    }
-  }
+//     qabul(productKey, quantity) {
+//       console.log(`${productKey} ga ${quantity} ta qabul ishga tushdi:`, new Date().toLocaleString());
+//       if (this[productKey] !== undefined) {
+//         this[productKey] += quantity;
+//       } else {
+//         this[productKey] = quantity;
+//       }
+//       console.log(`${productKey} ga ${quantity} ta qo'shildi. Yangi qoldiq: ${this[productKey]}`);
+//     }
+//   }
   
-  // Shop classini sinab ko'rish:
-  const myShop = new Shop(50, 75, 20);
-  myShop.qoldiq();
-  myShop.sotish('olma', 10);
-  myShop.qabul('banan', 30);
-  myShop.qoldiq();
+//   // Shop classini sinab ko'rish:
+//   const myShop = new Shop(50, 75, 20);
+//   myShop.qoldiq();
+//   myShop.sotish('olma', 10);
+//   myShop.qabul('banan', 30);
+//   myShop.qoldiq();
   
   
 
