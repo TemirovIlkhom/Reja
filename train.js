@@ -1,21 +1,33 @@
-// D - TASK: Anagramma
-function anagram(qiymat1, qiymat2) {
-  if (qiymat1.length !== qiymat2.length) {
-      return false;
-  }
-  const charCount = {};
-  for (let char of qiymat1) {
-      charCount[char] = (charCount[char] || 0) + 1;
-  }
-  for (let char of qiymat2) {
-      if (!charCount[char]) 
-        return false;
-  }
-  return true;
+
+// E - TASK:
+function reversedString(a) {
+  const reversedString = a.split('').reverse().join('');
+
+  return reversedString;
 }
 
-console.log(anagram('listen', 'silent')); // true
-console.log(anagram('hello', 'world')); // false
+console.log(reversedString("salom"));
+
+
+
+// D - TASK: Anagramma
+// function anagram(qiymat1, qiymat2) {
+//   if (qiymat1.length !== qiymat2.length) {
+//       return false;
+//   }
+//   const charCount = {};
+//   for (let char of qiymat1) {
+//       charCount[char] = (charCount[char] || 0) + 1;
+//   }
+//   for (let char of qiymat2) {
+//       if (!charCount[char]) 
+//         return false;
+//   }
+//   return true;
+// }
+
+// console.log(anagram('listen', 'silent')); // true
+// console.log(anagram('hello', 'world')); // false
 
 
 // // C - TASK:
