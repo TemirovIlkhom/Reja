@@ -14,7 +14,7 @@ else {
     module.exports = client;
 
     const app = require("./app");
-    const PORT = process.env.PORT || 2000;
+    const PORT = process.env.PORT || 3070;
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}, http://localhost:${PORT}`);
     });

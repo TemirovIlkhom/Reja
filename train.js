@@ -1,12 +1,33 @@
 
-// E - TASK:
-function reversedString(a) {
-  const reversedString = a.split('').reverse().join('');
+// F - TASK:
+function findDoublers(abs) {
+  const letters = {};  // Harflarni saqlash uchun obyekt
 
-  return reversedString;
+  for (let i = 0; i < abs.length; i++) {
+      const char = abs[i];  // Joriy harfni olish
+      if (letters[char]) {
+          return true;  // Agar harf avvalroq uchragan bo'lsa, true qaytaradi
+      }
+      letters[char] = true;  // Harfni lug'atga qo'shish
+  }
+
+  return false;  // Agar hech qanday harf takrorlanmasa, false qaytaradi
 }
 
-console.log(reversedString("salom"));
+// Test cases
+console.log(findDoublers("hello"));  // true, "l" harfi ikki marta takrorlangan
+console.log(findDoublers("world"));  // false, har bir harf faqat bir marta uchragan
+
+
+
+// // E - TASK:
+// function reversedString(a) {
+//   const reversedString = a.split('').reverse().join('');
+
+//   return reversedString;
+// }
+
+// console.log(reversedString("salom"));
 
 
 
